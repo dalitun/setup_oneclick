@@ -1403,6 +1403,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
     $scope.heatTenantId = {id: null, value: []};
 
     var currentKeyPair = null;
+    var currentNetwork = null;
 
     function initTenants() {
         ContactData.listTenants().then(function(data) {
@@ -1447,6 +1448,11 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
             			currentKeyPair = inp.attributes;
             			break;
             		}
+                    if (inp.attributes.name == "network_name"){
+                        console.log("Found network_name", inp);
+                        currentNetwork = inp.attributes;
+                        break;
+                    }
             	}
             }
             $timeout(function() {
@@ -1481,7 +1487,9 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
     $scope.canListKeypairs = true;
 
+
     $scope.myKeypairs = null;
+
 
     $scope.keypairCreated = null;
 
@@ -1582,6 +1590,129 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
     };
 
+    ///// add networks
+
+
+    $scope.canListNetworks = true;
+
+
+    $scope.myNetworks = null;
+
+
+    $scope.networkCreated = null;
+
+  /* $scope.createNetwork = function(name, comment){
+        var theTenantId = $scope.heatTenantId.id;
+        var s_scopedToken = getScopedToken( theTenantId );
+        if (s_scopedToken == null){
+            return null;
+        }
+        if (name == null){
+            name = "cloudwatt_network";
+        }
+        var access = s_scopedToken.access;
+        if (access == null)
+            return null;
+        var scopedToken = ""+access.token.id;
+        var stacksCreate = $resource(restPublicUrl + '/openstack/nova/os-keypairs?region=fr1', {}, {//create network here
+            'create': {
+                method: 'POST',
+                isArray: false,
+                headers: {
+                    'X-Auth-Token': scopedToken
+                }
+            }
+        });
+        alertify.success("Creating network...");
+        stacksCreate.create({network:{name:name}}, function(res){
+            alertify.success("Network "+name+" created");
+            $scope.networkCreated = res;
+            refreshNetworks(true);
+            $timeout(function() {
+                $scope.$apply();
+            });
+            saveTextAsFile("id_rsa", res.keypair.private_key);
+            //saveTextAsFile("id_rsa_public.txt", res.keypair.public_key);
+        }, function(err){
+
+            console.log("Failed to create keypair", err);
+            if (err.status == 409){
+                alertify.error("Failed to create keypair, this keypair name '"+name+"' already exists!");
+            } else {
+                alertify.error("Failed to create keypair due to HTTP : '"+err.status);
+            }
+        });
+    }
+*/
+
+    function refreshNetworks(forceRefresh){
+        var theTenantId = $scope.heatTenantId.id;
+
+        if ($scope.myNetworks != null){
+            if (!forceRefresh && $scope.myNetworks.tenantId == theTenantId){
+                return $scope.myNetworks;
+            }
+        }
+
+        var s_scopedToken = getScopedToken( theTenantId );
+        if (s_scopedToken == null){
+            return null;
+        }
+        var access = s_scopedToken.access;
+        if (access == null)
+            return null;
+        var scopedToken = ""+access.token.id;
+
+        var stacksFinder = $resource(restPublicUrl + '/openstack/neutron/networks?region=fr1', {}, {
+            'list': {
+                method: 'GET',
+                isArray: false,
+                headers: {
+                    'X-Auth-Token': scopedToken
+                }
+            }
+        });
+
+        $scope.myNetworks = { networks:"" , tenantId: theTenantId};
+        stacksFinder.list({}, function(res){
+            res.tenantId = theTenantId;
+            console.log("looking for netowrks");
+             //$scope.myNetworks.networks = [{name:"Kristian", id:"2"}, {name:"John", id:"1"}];
+            $scope.myNetworks.networks=res.networks
+            console.log("ddddddddddd");
+            console.log($scope.myNetworks.networks);
+
+
+              //if (currentNetwork.value == null || currentNetwork.value == ''){
+                    // Get first network
+                  //  if (res.networks.length > 0){
+                   //     console.log("Init first network");
+                   //     currentNetwork.value = res.networks[0].name;
+                  //  }
+                //}
+
+
+            $timeout(function() {
+                $scope.$apply();
+            });
+        }, function (err){
+            alertify.error("Failed to list networks for "+theTenantId);
+            $scope.canListNetworks = false;
+            //$scope.myKeypairs = { keypairs:[], tenantId: theTenantId};
+            $timeout(function() {
+                $scope.$apply();
+            });
+        });
+
+
+        return $scope.myNetworks;
+
+    };
+
+
+
+    //////
+
     function fillValues(value, tenant) {
         return value.replace('OS_TENANT_ID', tenant.id).
                 replace('OS_TENANT_NAME', tenant.value[tenant.id].access.token.tenant.name).
@@ -1589,6 +1720,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
     };
 
     function refreshStacks(forceRefresh){
+
     		var theTenantId = $scope.heatTenantId.id;
     		if ($scope.myStacks != null){
     			if (!forceRefresh && $scope.myStacks.tenantId == theTenantId){
@@ -1679,6 +1811,9 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
     };
     $scope.refreshKeypairs = refreshKeypairs;
+
+    $scope.refreshNetworks = refreshNetworks;
+
     $scope.refreshStacks = refreshStacks;
 
     $scope.extractHeatEndpoint=function(){
