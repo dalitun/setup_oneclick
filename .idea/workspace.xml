@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6cfa370-49bb-49f2-a43a-dba2487ae9f6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller.js" afterPath="$PROJECT_DIR$/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stacks/lamp1.json" afterPath="$PROJECT_DIR$/stacks/lamp1.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/heat.html" afterPath="$PROJECT_DIR$/views/heat.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="1456" column="0" lean-forward="true" selection-start-line="1456" selection-start-column="0" selection-end-line="1456" selection-end-column="0" />
+            <state relative-caret-position="433">
+              <caret line="1677" column="49" lean-forward="false" selection-start-line="1677" selection-start-column="49" selection-end-line="1677" selection-end-column="49" />
               <folding>
                 <element signature="e#2488#3597#0" expanded="false" />
                 <element signature="e#3811#3876#0" expanded="false" />
@@ -67,9 +66,7 @@
                 <element signature="e#40453#40529#0" expanded="false" />
                 <element signature="e#40599#40952#0" expanded="false" />
                 <element signature="e#40995#41040#0" expanded="false" />
-                <element signature="e#51149#51388#0" expanded="false" />
-                <marker date="1481723394405" expanded="false" signature="48030:48257" ph="{...}" />
-                <marker date="1481723394405" expanded="false" signature="48373:48739" ph="{...}" />
+                <element signature="e#52847#53086#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,8 +75,8 @@
       <file leaf-file-name="heat.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/heat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="35" column="191" lean-forward="false" selection-start-line="35" selection-start-column="191" selection-end-line="35" selection-end-column="191" />
+            <state relative-caret-position="420">
+              <caret line="75" column="122" lean-forward="false" selection-start-line="75" selection-start-column="122" selection-end-line="75" selection-end-column="122" />
               <folding>
                 <element signature="n#style#0;n#select#0;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#1;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -99,7 +96,7 @@
       <file leaf-file-name="lamp1.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stacks/lamp1.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="1815">
               <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
               <folding />
             </state>
@@ -113,7 +110,6 @@
       <find>canList</find>
       <find>canListKey</find>
       <find>create</find>
-      <find>createkey</find>
       <find>createkeypair</find>
       <find>urrentKeyPair</find>
       <find>restPublicUrl</find>
@@ -132,7 +128,15 @@
       <find>currentNe</find>
       <find>zebb</find>
       <find>currentNetw</find>
+      <find>networkCreated</find>
+      <find>keypairCreated</find>
+      <find>refres</find>
+      <find>POST</find>
+      <find>stacksCreate</find>
       <find>Nom du réseau</find>
+      <find>json</find>
+      <find>createkey</find>
+      <find>get</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -305,12 +309,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1481624013133</updated>
-      <workItem from="1481624014462" duration="36413000" />
+      <workItem from="1481624014462" duration="48986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36413000" />
+    <option name="totallyTimeSpent" value="48986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
@@ -345,12 +349,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/controller.js</url>
-          <line>1468</line>
+          <line>1467</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/controller.js</url>
-          <line>1821</line>
+          <line>1876</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -420,7 +424,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stacks/lamp1.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="1815">
           <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
           <folding />
         </state>
@@ -428,8 +432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/heat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="35" column="191" lean-forward="false" selection-start-line="35" selection-start-column="191" selection-end-line="35" selection-end-column="191" />
+        <state relative-caret-position="420">
+          <caret line="75" column="122" lean-forward="false" selection-start-line="75" selection-start-column="122" selection-end-line="75" selection-end-column="122" />
           <folding>
             <element signature="n#style#0;n#select#0;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#1;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -447,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="1456" column="0" lean-forward="true" selection-start-line="1456" selection-start-column="0" selection-end-line="1456" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="1677" column="49" lean-forward="false" selection-start-line="1677" selection-start-column="49" selection-end-line="1677" selection-end-column="49" />
           <folding>
             <element signature="e#2488#3597#0" expanded="false" />
             <element signature="e#3811#3876#0" expanded="false" />
@@ -486,9 +490,7 @@
             <element signature="e#40453#40529#0" expanded="false" />
             <element signature="e#40599#40952#0" expanded="false" />
             <element signature="e#40995#41040#0" expanded="false" />
-            <element signature="e#51149#51388#0" expanded="false" />
-            <marker date="1481723394405" expanded="false" signature="48030:48257" ph="{...}" />
-            <marker date="1481723394405" expanded="false" signature="48373:48739" ph="{...}" />
+            <element signature="e#52847#53086#0" expanded="false" />
           </folding>
         </state>
       </provider>

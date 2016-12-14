@@ -1439,7 +1439,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
         $resource("stacks/:stack.json", {stack: $scope.stack}).get({}, function(res) {
             $scope.heat = res;
-            console.log("xxxxxxxxxxxx");
             for (var i=0; i<res.guiGroups[0].inputs.length; i++) {
                 console.log(i);
                 var inp = res.guiGroups[0].inputs[i];
@@ -1604,7 +1603,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
     $scope.networkCreated = null;
 
-  /* $scope.createNetwork = function(name, comment){
+    $scope.createNetwork = function(name, comment){
         var theTenantId = $scope.heatTenantId.id;
         var s_scopedToken = getScopedToken( theTenantId );
         if (s_scopedToken == null){
@@ -1617,7 +1616,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
         if (access == null)
             return null;
         var scopedToken = ""+access.token.id;
-        var stacksCreate = $resource(restPublicUrl + '/openstack/nova/os-keypairs?region=fr1', {}, {//create network here
+        var stacksCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/networks', {"networks": [{"name": name,"admin_state_up": true}]}, {//create network here
             'create': {
                 method: 'POST',
                 isArray: false,
@@ -1626,6 +1625,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
                 }
             }
         });
+
         alertify.success("Creating network...");
         stacksCreate.create({network:{name:name}}, function(res){
             alertify.success("Network "+name+" created");
@@ -1634,19 +1634,77 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
             $timeout(function() {
                 $scope.$apply();
             });
-            saveTextAsFile("id_rsa", res.keypair.private_key);
+
+            //subnet create
+            console.log("eeeeeeeeeeeeeeeeeeeeeeeee");
+            console.log($scope.networkCreated.network.id);
+            var id= $scope.networkCreated.network.id
+
+           /*
+            var subnetCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets',{"subnet":{"network_id": id,"ip_version": 4,"cidr": "192.168.0.0/24"}},{
+                'create': {
+                    method: 'POST',
+                    isArray: false,
+                    headers: {
+                        'X-Auth-Token': scopedToken
+                    }
+                }
+            });
+
+            subnetCreate.create({subnet:{id:id}},function(res){
+                alertify.success("Subnet created");
+                //$scope.networkCreated = res;
+                refreshNetworks(true);
+                $timeout(function() {
+                    $scope.$apply();
+                });
+                }, function(err){
+
+                  console.log("Failed to create subnet", err);
+
+               });
+
+                 */
+
+            var createsubnet = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets',{"subnet":{"network_id": id,"ip_version": 4,"cidr": "192.168.0.0/24"}}, {
+                'get': {
+                    method: 'POST',
+                    isArray: false,
+                    headers: {
+                        'X-Auth-Token': scopedToken
+                    }
+                }
+            });
+            createsubnet.get({id: id}, function (){
+                //$scope.myStacksDetails[resStack.stack.id] = resStack;
+                $timeout(function() {
+                    $scope.$apply();
+                });
+            });
+
+
+
+            //  saveTextAsFile("id_rsa", res.keypair.private_key);
             //saveTextAsFile("id_rsa_public.txt", res.keypair.public_key);
         }, function(err){
 
-            console.log("Failed to create keypair", err);
+            console.log("Failed to create network", err);
             if (err.status == 409){
-                alertify.error("Failed to create keypair, this keypair name '"+name+"' already exists!");
+                alertify.error("Failed to create network, this network name '"+name+"' already exists!");
             } else {
-                alertify.error("Failed to create keypair due to HTTP : '"+err.status);
+                alertify.error("Failed to create network due to HTTP : '"+err.status);
             }
         });
+
+
+
+
+
+
+
+
     }
-*/
+
 
     function refreshNetworks(forceRefresh){
         var theTenantId = $scope.heatTenantId.id;
@@ -1692,9 +1750,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
                     }
                 }
             }
-
-
-
 
             $timeout(function() {
                 $scope.$apply();

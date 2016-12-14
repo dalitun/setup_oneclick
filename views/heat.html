@@ -73,7 +73,7 @@
                     </div>
 
                     <div ng-if="input.attributes.id == 'network_name'" class="help-block info"><a href="{{consolePublicUrl}}/project/networks" target="_blank">Manage my Networks</a>
-
+                        <button class="btn btn-warning" ng-if="!networkCreated" ng-click="createNetwork('cloudwatt_network')" translate="Create Network">You don't have any network, Create a new Network!</button>
                     </div>
 
             </fieldset>
