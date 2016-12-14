@@ -34,8 +34,9 @@
                     </select>
 
                     <select style='width:100%;' class="form-control" ng-if="canListNetworks && input.nodeType == 'input' && input.attributes.id == 'network_name'" name="{{ input.attributes.id }}" id="{{ input.attributes.id }}" title="{{ input.attributes.description }}" ng-model="input.attributes.value">
-                        <option class="form-control" ng-repeat="val in refreshNetworks().networks" title="{{val.id}}"  ng-selected="val.name == input.attributes.value">{{ val.name }}</option>
+                        <option class="form-control" ng-if="val.name != 'public'" ng-repeat="val in refreshNetworks().networks" title="{{val.id}}"  ng-selected="val.name == inputs.attributes.value" ng-value="val.name">{{ val.name }}</option>
                     </select>
+
 
                     <div class="control-wrap">
                         <input type="{{input.attributes.type}}" ng-maxlength="{{input.attributes.maxLength}}" ng-minlength="{{input.attributes.minLength}}" class="form-control" ng-pattern="{{input.attributes.pattern}}" ng-if="input.nodeType == 'input' && (!canListKeypairs || input.attributes.id != 'keypair_name' ) && (!canListNetworks || input.attributes.id != 'network_name')" name="{{ input.attributes.id }}" id="{{ input.attributes.id }}" placeholder="{{ input.attributes.description }}" title="{{ input.attributes.description }}" ng-model="input.attributes.value" data-error="{{ input.attributes.dataErrors}}">

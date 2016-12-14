@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6cfa370-49bb-49f2-a43a-dba2487ae9f6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller.js" afterPath="$PROJECT_DIR$/js/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stacks/lamp1.json" afterPath="$PROJECT_DIR$/stacks/lamp1.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/heat.html" afterPath="$PROJECT_DIR$/views/heat.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,14 +25,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="1678" column="13" lean-forward="false" selection-start-line="1678" selection-start-column="13" selection-end-line="1678" selection-end-column="13" />
+            <state relative-caret-position="264">
+              <caret line="1456" column="0" lean-forward="true" selection-start-line="1456" selection-start-column="0" selection-end-line="1456" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#destroyClickedElement#0" expanded="false" />
-                <element signature="n#!!block;n#saveTextAsFile#0" expanded="false" />
                 <element signature="e#2488#3597#0" expanded="false" />
                 <element signature="e#3811#3876#0" expanded="false" />
                 <element signature="e#21263#21433#0" expanded="false" />
@@ -69,29 +67,24 @@
                 <element signature="e#40453#40529#0" expanded="false" />
                 <element signature="e#40599#40952#0" expanded="false" />
                 <element signature="e#40995#41040#0" expanded="false" />
-                <element signature="e#42114#43058#0" expanded="false" />
-                <element signature="e#51256#51495#0" expanded="false" />
-                <element signature="e#54913#55460#0" expanded="false" />
-                <element signature="e#55597#57031#0" expanded="false" />
-                <element signature="e#57067#57795#0" expanded="false" />
-                <element signature="e#59359#59894#0" expanded="false" />
-                <marker date="1481654100194" expanded="false" signature="48038:48265" ph="{...}" />
-                <marker date="1481654100194" expanded="false" signature="48381:48747" ph="{...}" />
+                <element signature="e#51149#51388#0" expanded="false" />
+                <marker date="1481723394405" expanded="false" signature="48030:48257" ph="{...}" />
+                <marker date="1481723394405" expanded="false" signature="48373:48739" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="heat.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="heat.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/heat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
+            <state relative-caret-position="165">
+              <caret line="35" column="191" lean-forward="false" selection-start-line="35" selection-start-column="191" selection-end-line="35" selection-end-column="191" />
               <folding>
                 <element signature="n#style#0;n#select#0;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#1;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#2;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#5422#5430#0" expanded="true" />
+                <element signature="e#5473#5481#0" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -106,8 +99,8 @@
       <file leaf-file-name="lamp1.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stacks/lamp1.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="149" column="7" lean-forward="true" selection-start-line="149" selection-start-column="7" selection-end-line="149" selection-end-column="7" />
+            <state relative-caret-position="170">
+              <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -132,9 +125,14 @@
       <find>myNetworks</find>
       <find>réseau</find>
       <find>nom du réseau</find>
-      <find>Nom du réseau</find>
       <find>resource</find>
       <find>theTenantId</find>
+      <find>currentKe</find>
+      <find>current</find>
+      <find>currentNe</find>
+      <find>zebb</find>
+      <find>currentNetw</find>
+      <find>Nom du réseau</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,8 +142,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/stacks/lamp1.json" />
-        <option value="$PROJECT_DIR$/js/controller.js" />
         <option value="$PROJECT_DIR$/views/heat.html" />
+        <option value="$PROJECT_DIR$/js/controller.js" />
       </list>
     </option>
   </component>
@@ -307,15 +305,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1481624013133</updated>
-      <workItem from="1481624014462" duration="24485000" />
+      <workItem from="1481624014462" duration="36413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24485000" />
+    <option name="totallyTimeSpent" value="36413000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1602" height="853" extended-state="7" />
+    <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.093125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -347,11 +345,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/controller.js</url>
-          <line>1465</line>
+          <line>1468</line>
           <properties />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/controller.js</url>
+          <line>1821</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -416,19 +420,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stacks/lamp1.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="149" column="7" lean-forward="true" selection-start-line="149" selection-start-column="7" selection-end-line="149" selection-end-column="7" />
+        <state relative-caret-position="170">
+          <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/heat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="35" column="191" lean-forward="false" selection-start-line="35" selection-start-column="191" selection-end-line="35" selection-end-column="191" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#1;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#2;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#5473#5481#0" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="1678" column="13" lean-forward="false" selection-start-line="1678" selection-start-column="13" selection-end-line="1678" selection-end-column="13" />
+        <state relative-caret-position="264">
+          <caret line="1456" column="0" lean-forward="true" selection-start-line="1456" selection-start-column="0" selection-end-line="1456" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#destroyClickedElement#0" expanded="false" />
-            <element signature="n#!!block;n#saveTextAsFile#0" expanded="false" />
             <element signature="e#2488#3597#0" expanded="false" />
             <element signature="e#3811#3876#0" expanded="false" />
             <element signature="e#21263#21433#0" expanded="false" />
@@ -465,33 +486,9 @@
             <element signature="e#40453#40529#0" expanded="false" />
             <element signature="e#40599#40952#0" expanded="false" />
             <element signature="e#40995#41040#0" expanded="false" />
-            <element signature="e#42114#43058#0" expanded="false" />
-            <element signature="e#51256#51495#0" expanded="false" />
-            <element signature="e#54913#55460#0" expanded="false" />
-            <element signature="e#55597#57031#0" expanded="false" />
-            <element signature="e#57067#57795#0" expanded="false" />
-            <element signature="e#59359#59894#0" expanded="false" />
-            <marker date="1481654100194" expanded="false" signature="48038:48265" ph="{...}" />
-            <marker date="1481654100194" expanded="false" signature="48381:48747" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/heat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#1;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#2;n#div#0;n#fieldset#0;n#form#0;n#center#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#5422#5430#0" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#0;n#center#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#center#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#51149#51388#0" expanded="false" />
+            <marker date="1481723394405" expanded="false" signature="48030:48257" ph="{...}" />
+            <marker date="1481723394405" expanded="false" signature="48373:48739" ph="{...}" />
           </folding>
         </state>
       </provider>

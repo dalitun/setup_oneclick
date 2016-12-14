@@ -31,23 +31,6 @@
       }
     },
     "resources" : {
-      "network" : {
-        "type" : "OS::Neutron::Net"
-      },
-      "subnet" : {
-        "type" : "OS::Neutron::Subnet",
-        "properties" : {
-          "network_id" : {
-            "get_resource" : "network"
-          },
-          "ip_version" : 4,
-          "cidr" : "10.0.1.0/24",
-          "allocation_pools" : [ {
-            "start" : "10.0.1.100",
-            "end" : "10.0.1.199"
-          } ]
-        }
-      },
       "security_group" : {
         "type" : "OS::Neutron::SecurityGroup",
         "properties" : {
@@ -99,7 +82,7 @@
           },
           "networks" : [ {
             "network" : {
-              "get_resource" : "network"
+              "get_param" : "network_name"
             }
           } ],
           "security_groups" : [ {

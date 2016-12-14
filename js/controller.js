@@ -1439,22 +1439,25 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
         $resource("stacks/:stack.json", {stack: $scope.stack}).get({}, function(res) {
             $scope.heat = res;
-            for (var i in res.guiGroups) {
-            	var grp = res.guiGroups[i];
-            	for (var j in grp.inputs) {
-            		var inp = grp.inputs[j];
-            		if (inp.attributes.name == "keypair_name"){
-            			console.log("Found keypair_name", inp);
-            			currentKeyPair = inp.attributes;
-            			break;
-            		}
-                    if (inp.attributes.name == "network_name"){
-                        console.log("Found network_name", inp);
-                        currentNetwork = inp.attributes;
-                        break;
-                    }
-            	}
+            console.log("xxxxxxxxxxxx");
+            for (var i=0; i<res.guiGroups[0].inputs.length; i++) {
+                console.log(i);
+                var inp = res.guiGroups[0].inputs[i];
+
+                if (inp.attributes.name == "keypair_name"){
+                    console.log("Found keypair_name", inp);
+                    currentKeyPair = inp.attributes;
+
+                }
+                if (inp.attributes.name == "network_name"){
+                    console.log("Found network_name", inp);
+                    currentNetwork = inp.attributes;
+                    break;
+                }
+
             }
+
+
             $timeout(function() {
                 $scope.$apply();
             });
@@ -1673,23 +1676,24 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
             }
         });
 
-        $scope.myNetworks = { networks:"" , tenantId: theTenantId};
+        $scope.myNetworks = { networks: null, tenantId: theTenantId};
         stacksFinder.list({}, function(res){
             res.tenantId = theTenantId;
+
             console.log("looking for netowrks");
-             //$scope.myNetworks.networks = [{name:"Kristian", id:"2"}, {name:"John", id:"1"}];
-            $scope.myNetworks.networks=res.networks
-            console.log("ddddddddddd");
-            console.log($scope.myNetworks.networks);
-
-
-              //if (currentNetwork.value == null || currentNetwork.value == ''){
+            $scope.myNetworks.networks=res.networks;
                     // Get first network
-                  //  if (res.networks.length > 0){
-                   //     console.log("Init first network");
-                   //     currentNetwork.value = res.networks[0].name;
-                  //  }
-                //}
+            if (currentNetwork != null){
+                if (currentNetwork.value == null || currentNetwork.value == ''){
+                    // Get first  network
+                    if (res.networks.length > 0){
+                        console.log("Init first Network");
+                        currentNetwork.value = res.networks[0].name;
+                    }
+                }
+            }
+
+
 
 
             $timeout(function() {
@@ -1708,7 +1712,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
         return $scope.myNetworks;
 
     };
-
 
 
     //////
