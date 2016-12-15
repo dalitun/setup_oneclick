@@ -1616,7 +1616,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
         if (access == null)
             return null;
         var scopedToken = ""+access.token.id;
-        var stacksCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/networks', {"networks": [{"name": name,"admin_state_up": true}]}, {//create network here
+        var stacksCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/networks', {}, {//create network here
             'create': {
                 method: 'POST',
                 isArray: false,
@@ -1636,12 +1636,11 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
             });
 
             //subnet create
-            console.log("eeeeeeeeeeeeeeeeeeeeeeeee");
-            console.log($scope.networkCreated.network.id);
             var id= $scope.networkCreated.network.id
+             console.log("token");
+             console.log(scopedToken);
 
-           /*
-            var subnetCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets',{"subnet":{"network_id": id,"ip_version": 4,"cidr": "192.168.0.0/24"}},{
+            var subnetCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets', {},{
                 'create': {
                     method: 'POST',
                     isArray: false,
@@ -1651,10 +1650,10 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
                 }
             });
 
-            subnetCreate.create({subnet:{id:id}},function(res){
+            subnetCreate.create({"subnet": {"network_id": id,"ip_version": 4,"cidr": "10.0.4.0/24"}},function(res){
                 alertify.success("Subnet created");
                 //$scope.networkCreated = res;
-                refreshNetworks(true);
+                //refreshNetworks(true);
                 $timeout(function() {
                     $scope.$apply();
                 });
@@ -1664,23 +1663,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
                });
 
-                 */
 
-            var createsubnet = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets',{"subnet":{"network_id": id,"ip_version": 4,"cidr": "192.168.0.0/24"}}, {
-                'get': {
-                    method: 'POST',
-                    isArray: false,
-                    headers: {
-                        'X-Auth-Token': scopedToken
-                    }
-                }
-            });
-            createsubnet.get({id: id}, function (){
-                //$scope.myStacksDetails[resStack.stack.id] = resStack;
-                $timeout(function() {
-                    $scope.$apply();
-                });
-            });
 
 
 
