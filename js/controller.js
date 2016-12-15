@@ -1440,7 +1440,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
         $resource("stacks/:stack.json", {stack: $scope.stack}).get({}, function(res) {
             $scope.heat = res;
             for (var i=0; i<res.guiGroups[0].inputs.length; i++) {
-                console.log(i);
                 var inp = res.guiGroups[0].inputs[i];
 
                 if (inp.attributes.name == "keypair_name"){
@@ -1650,7 +1649,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
                 }
             });
 
-            subnetCreate.create({"subnet": {"network_id": id,"ip_version": 4,"cidr": "10.0.4.0/24"}},function(res){
+            subnetCreate.create({"subnet": {"network_id": id,"ip_version": 4,"cidr": "192.168.0.0/24"}},function(res){
                 alertify.success("Subnet created");
                 $scope.networkCreated = res;
                 refreshNetworks(true);
@@ -1716,7 +1715,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
             console.log("looking for netowrks");
             $scope.myNetworks.networks=res.networks;
-            console.log(res.networks);
                     // Get first network
             if (currentNetwork != null){
                 if (currentNetwork.value == null || currentNetwork.value == ''){
@@ -1724,7 +1722,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
                     if (res.networks.length > 1){
                         console.log("Init first Network");
                         currentNetwork.value = res.networks[1].name;
-                        console.log(res.networks[1].name);
 
                     }
                 }
