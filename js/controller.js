@@ -1716,13 +1716,16 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
             console.log("looking for netowrks");
             $scope.myNetworks.networks=res.networks;
+            console.log(res.networks);
                     // Get first network
             if (currentNetwork != null){
                 if (currentNetwork.value == null || currentNetwork.value == ''){
                     // Get first  network
-                    if (res.networks.length > 0){
+                    if (res.networks.length > 1){
                         console.log("Init first Network");
-                        currentNetwork.value = res.networks[0].name;
+                        currentNetwork.value = res.networks[1].name;
+                        console.log(res.networks[1].name);
+
                     }
                 }
             }
