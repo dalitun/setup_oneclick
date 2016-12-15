@@ -1527,6 +1527,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
             		});
             		saveTextAsFile("id_rsa", res.keypair.private_key);
             		//saveTextAsFile("id_rsa_public.txt", res.keypair.public_key);
+
             }, function(err){
 
             		console.log("Failed to create keypair", err);
@@ -1592,7 +1593,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
     };
 
-    ///// add networks
+    ///// add network and subnet
 
 
     $scope.canListNetworks = true;
@@ -1602,6 +1603,7 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
 
     $scope.networkCreated = null;
+
 
     $scope.createNetwork = function(name, comment){
         var theTenantId = $scope.heatTenantId.id;
@@ -1637,10 +1639,8 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
             //subnet create
             var id= $scope.networkCreated.network.id
-             console.log("token");
-             console.log(scopedToken);
 
-            var subnetCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets', {},{
+            var subnetCreate = $resource('https://network.fr1.cloudwatt.com/v2.0/subnets', {},{//create subnet here
                 'create': {
                     method: 'POST',
                     isArray: false,
@@ -1652,8 +1652,8 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
             subnetCreate.create({"subnet": {"network_id": id,"ip_version": 4,"cidr": "10.0.4.0/24"}},function(res){
                 alertify.success("Subnet created");
-                //$scope.networkCreated = res;
-                //refreshNetworks(true);
+                $scope.networkCreated = res;
+                refreshNetworks(true);
                 $timeout(function() {
                     $scope.$apply();
                 });
@@ -1663,12 +1663,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
                });
 
-
-
-
-
-            //  saveTextAsFile("id_rsa", res.keypair.private_key);
-            //saveTextAsFile("id_rsa_public.txt", res.keypair.public_key);
         }, function(err){
 
             console.log("Failed to create network", err);
@@ -1691,7 +1685,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
 
     function refreshNetworks(forceRefresh){
         var theTenantId = $scope.heatTenantId.id;
-
         if ($scope.myNetworks != null){
             if (!forceRefresh && $scope.myNetworks.tenantId == theTenantId){
                 return $scope.myNetworks;
@@ -1740,7 +1733,6 @@ app.controller("HeatController", function($window, $location, HMacComputeTempURL
         }, function (err){
             alertify.error("Failed to list networks for "+theTenantId);
             $scope.canListNetworks = false;
-            //$scope.myKeypairs = { keypairs:[], tenantId: theTenantId};
             $timeout(function() {
                 $scope.$apply();
             });
